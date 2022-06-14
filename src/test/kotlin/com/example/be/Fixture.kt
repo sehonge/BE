@@ -1,10 +1,7 @@
 package com.example.be
 
 import com.example.be.dto.*
-import com.example.be.entity.Board
-import com.example.be.entity.Comment
-import com.example.be.entity.Content
-import com.example.be.entity.User
+import com.example.be.entity.*
 import java.time.LocalDateTime
 import java.util.*
 
@@ -126,6 +123,11 @@ class Fixture {
         val userRegisterDto = UserRegisterDto(
             email = "test123@naver.com",
             password = "test12345"
+        )
+
+        val userRegisterInfo = UserRegisterInfo(
+            id = "test123@naver.com",
+            password = "encodedPassword"
         )
 
         val updateUserDto = UpdateUserDto(

@@ -81,10 +81,7 @@ internal class UserServiceImplTest {
         fun test00() {
             // given
             val userRegisterDto = Fixture.userRegisterDto
-            val userRegisterInfo = UserRegisterInfo(
-                id = userRegisterDto.email,
-                password = "encoded password"
-            )
+            val userRegisterInfo = Fixture.userRegisterInfo
 
             // when
             Mockito.`when`(passwordEncoder.encode(Mockito.anyString())).thenReturn("encoded password")
@@ -146,10 +143,7 @@ internal class UserServiceImplTest {
         fun test00() {
             // given
             val userRegisterDto = Fixture.userRegisterDto
-            val userRegisterInfo = UserRegisterInfo(
-                id = userRegisterDto.email,
-                password = "encoded password"
-            )
+            val userRegisterInfo = Fixture.userRegisterInfo
 
             // when
             Mockito.`when`(userRegisterRepository.findById(Mockito.anyString())).thenReturn(Optional.of(userRegisterInfo))
@@ -165,10 +159,7 @@ internal class UserServiceImplTest {
         fun test01() {
             // given
             val userRegisterDto = Fixture.userRegisterDto
-            val userRegisterInfo = UserRegisterInfo(
-                id = userRegisterDto.email,
-                password = "encoded password"
-            )
+            val userRegisterInfo = Fixture.userRegisterInfo
 
             // when
             Mockito.`when`(userRegisterRepository.findById(Mockito.anyString())).thenReturn(Optional.of(userRegisterInfo))
@@ -203,10 +194,7 @@ internal class UserServiceImplTest {
         @DisplayName("성공하면, true를 반환한다.")
         fun test00() {
             // given
-            val userRegisterDto = UserRegisterDto(
-                email = Fixture.userRegisterDto.email,
-                password = "asdf12345"
-            )
+            val userRegisterDto = Fixture.userRegisterDto
             val encodedPassword = "!@#$%^&"
             val userRegisterInfo = UserRegisterInfo(
                 id = userRegisterDto.email,
@@ -252,10 +240,7 @@ internal class UserServiceImplTest {
         fun test00() {
             // given
             val user = Fixture.userRegisterDto
-            val userRegisterInfo = UserRegisterInfo(
-                id = user.email,
-                password = user.password
-            )
+            val userRegisterInfo = Fixture.userRegisterInfo
 
             // when
             Mockito.`when`(userRepository.findByEmail(Mockito.anyString())).thenReturn(Fixture.user)
